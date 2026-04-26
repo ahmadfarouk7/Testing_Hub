@@ -11,7 +11,7 @@ class PrefHelper {
   static const String _tokenKey = 'auth_token';
   static Future<void> saveToken(String token) async =>
       await _prefs.setString(_tokenKey, token);
-  static String? getToken() => _prefs.getString(_tokenKey);
+  static Future<String?> getToken() async => _prefs.getString(_tokenKey);
   static Future<void> clearToken() async => await _prefs.remove(_tokenKey);
 
   // --- UI settings Section ---
